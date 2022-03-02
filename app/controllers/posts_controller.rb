@@ -1,7 +1,8 @@
-class PostsController < ApplicationController
-  def index
-  end
+# frozen_string_literal: true
 
-  def show
-  end
+# List and display posts from a user
+class PostsController < ApplicationController
+  def index; end
+
+  def show; end
 end
