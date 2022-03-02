@@ -4,12 +4,13 @@ require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
   describe 'GET /index' do
-    before(:example) { get '/users/sample_user' }
+    before(:example) { get '/users/sample_user/posts' }
     it 'Should have http status ok' do
       expect(response).to have_http_status(:ok)
     end
     it 'should render posts index page for a user' do
-      expect(response.body).to include('User: sample_user')
+      expect(response.body).to render_template(:index)
+      expect(response.body).to include('User id: sample_user')
     end
   end
   describe 'GET /show' do
@@ -18,6 +19,7 @@ RSpec.describe 'Posts', type: :request do
       expect(response).to have_http_status(:ok)
     end
     it 'should render specific post page for given user' do
+      expect(response.body).to render_template(:show)
       expect(response.body).to include('Post: post_id User: sample_user')
     end
   end

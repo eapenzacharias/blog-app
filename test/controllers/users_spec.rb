@@ -18,6 +18,7 @@ RSpec.describe 'Users', type: :request do
       expect(response).to have_http_status(:ok)
     end
     it 'should render user index page' do
+      expect(response.body).to render_template(:show)
       expect(response.body).to include('User: sample_user')
     end
   end
