@@ -17,7 +17,7 @@ RSpec.describe 'Posts', type: :request do
     it 'Should have http status ok' do
       expect(response).to have_http_status(:ok)
     end
-    it 'should render post index page for given user' do
+    it 'should render specific post page for given user' do
       expect(response.body).to include('Post: post_id User: sample_user')
     end
   end
