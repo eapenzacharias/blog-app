@@ -12,6 +12,9 @@ module.exports = {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
     },
+    container: {
+      center: true,
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),
