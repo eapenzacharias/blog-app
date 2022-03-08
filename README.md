@@ -1,24 +1,56 @@
-# README
+# Blog App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> Blog website made with Ruby on Rails.
 
-Things you may want to cover:
 
-* Ruby version
+## Built With
 
-* System dependencies
+- Ruby on Rails
 
-* Configuration
+## Getting Started
 
-* Database creation
+### Prerequisites
 
-* Database initialization
+You need to have ruby installed in your machine.
 
-* How to run the test suite
+### Setup
 
-* Services (job queues, cache servers, search engines, etc.)
+Clone this repo and enter the directory.
 
-* Deployment instructions
+```sh
+git clone git@github.com:eapenzacharias/blog-app.git && cd blog-app
+```
 
-* ...
+### Install
+
+Run the following command to install all the dependencies.
+
+```sh
+bundler install
+```
+
+### Usage
+
+Run the following command to start the server, then go to http://localhost:3000
+
+```sh
+rails s
+```
+
+### Run tests
+
+```sh
+bundle exec rspec
+```
+
+## Author
+
+👤 **Eapen Zacharias**
+
+- GitHub: [@eapenzacharias](https://github.com/eapenzacharias)
+- Twitter: [@eapenzac](https://twitter.com/eapenzac)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/eapenzac)
+
+## Show your support
+
+Give a ⭐️ if you like this project!
