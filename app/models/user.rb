@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# User model
 class User < ApplicationRecord
   has_many :comments, foreign_key: :author_id
   has_many :likes, foreign_key: :author_id
