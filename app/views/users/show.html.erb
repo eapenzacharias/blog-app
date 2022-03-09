@@ -16,7 +16,11 @@
     <div class="flex flex-col justify-between leading-normal min-w-full md-4">
       <h2 class="mb-3 font-bold text-gray-700">recent posts.</h2>
     </div>
-    <%= render partial: "post", collection: @posts %>
-    <%= link_to "see all posts.", user_posts_path(@user.id), class: "rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 p-2 pr-4 pl-4 mt-6 text-slate-50" %>
+    <% if @posts.length > 0 %>
+      <%= render partial: "post", collection: @posts %>
+      <%= link_to "see all posts.", user_posts_path(@user.id), class: "rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 p-2 pr-4 pl-4 mt-6 text-slate-50" %>
+    <% else %>
+      <p class="font-normal text-gray-700">zero posts from this user.</p>
+    <% end %>
   </div>
 </div>
