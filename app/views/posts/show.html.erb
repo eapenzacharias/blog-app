@@ -1,2 +1,17 @@
-<h1>Post: <%= @post_id %> User: <%= @user_id %></h1>
-<p>Shows user id and post id</p>
+<div class="m-auto 2xl:w-2/4 lg:3/4 md:w-5/6 md:max-w-xl">
+  <div class="flex flex-col  rounded-lg border justify-between p-3 leading-normal min-w-full m-2">
+    <div class="flex flex-row  rounded-lg border justify-between uppercase text-xs leading-normal min-w-full p-2 mb-4">
+      <span class="font-bold text-gray-700">post#<%= @post.id %> by <%= @user.name %>.</span>
+      <span class="text-right font-normal text-gray-500 self-end">Comments: <%= @post.comments_counter %>  Likes: <%= @post.likes_counter %></span>
+    </div>
+    <p class="mb-3 font-normal text-gray-700"><%= @post.text%></p>
+  </div>
+  <h2 class="mb-3 pl-3 font-bold text-gray-700"> comments.</h2>
+  <div class="flex flex-col  rounded-lg border justify-between p-3 leading-normal min-w-full m-2">
+    <% if @post.comments.length > 0 %>
+      <%= render partial: "comment", collection: @post.comments %>
+    <% else %>
+      <p class="font-normal text-gray-700">zero comments for this post.</p>
+    <% end %>
+  </div>
+</div>
