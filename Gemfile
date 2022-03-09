@@ -46,6 +46,7 @@ gem 'bootsnap', require: false
 
 gem 'rubocop'
 gem 'rubocop-rails'
+gem 'webpacker'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
