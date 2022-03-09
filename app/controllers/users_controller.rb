@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user_id = params[:id]
+    @user = User.find(params[:id])
+    @posts = @user&.recent_posts || 'No posts'
   end
 end

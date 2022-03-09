@@ -1,0 +1,5 @@
+<%= link_to user_post_path(@user.id, post.id), class: "flex flex-col  rounded-lg border justify-between p-1 leading-normal min-w-full m-2 hover:bg-gray-100" do %>
+  <h2 class="mb-3 font-bold text-gray-700">#<%= post.id %>.</h2>
+  <p class="mb-3 font-normal text-gray-700"><%= post.text[0..150] + "..." %></p>
+  <p class="mb-3 font-normal text-gray-700">Comments: <%= post.comments_counter %>  Likes: <%= post.likes_counter %></p>
+<%end%>

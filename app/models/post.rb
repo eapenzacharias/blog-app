@@ -9,6 +9,7 @@ class Post < ApplicationRecord
   after_update :update_posts_counter
 
   private
+
   def update_posts_counter
     author.update(posts_counter: author.posts.length)
     p "counter #{author.posts_counter}"
