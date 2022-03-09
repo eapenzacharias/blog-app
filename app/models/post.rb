@@ -12,8 +12,6 @@ class Post < ApplicationRecord
 
   def update_posts_counter
     author.update(posts_counter: author.posts.length)
-    p "counter #{author.posts_counter}"
-    p "post_length  #{author.posts.length}"
   end
 
   def recent_comments

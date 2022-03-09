@@ -3,11 +3,12 @@
 # List and display posts from a user
 class PostsController < ApplicationController
   def index
-    @user_id = params[:user_id]
+    @user = User.find(params[:user_id])
+    @posts = @user.posts
   end
 
   def show
-    @user_id = params[:user_id]
-    @post_id = params[:id]
+    @user = User.find(params[:user_id])
+    @posts = @user.posts
   end
 end
