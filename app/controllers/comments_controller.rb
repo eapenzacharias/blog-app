@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# handels comment creation
 class CommentsController < ApplicationController
   def new
     @current_user = current_user
