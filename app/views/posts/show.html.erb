@@ -4,6 +4,7 @@
       <span class="font-bold text-gray-700">post#<%= @post.id %> by <%= @user.name %>.</span>
       <span class="text-right font-normal text-gray-500 self-end">Comments: <%= @post.comments_counter %>  Likes: <%= @post.likes_counter %></span>
     </div>
+    <h2 class="mb-3 pl-3 font-bold text-gray-700"><%= @post.title %></h2>
     <p class="mb-3 font-normal text-gray-700"><%= @post.text%></p>
   </div>
   <h2 class="mb-3 pl-3 font-bold text-gray-700"> comments.</h2>
