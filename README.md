@@ -34,7 +34,9 @@ bundler install
 Run the following command to start the server, then go to http://localhost:3000
 
 ```sh
-rails s
+bin/dev # necessary to start the app for the first time
+---- or ----
+rails s # can be used after starting the app at least once  
 ```
 
 ### Run tests
