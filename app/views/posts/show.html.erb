@@ -7,11 +7,9 @@
     <h2 class="mb-3 pl-3 font-bold text-gray-700"><%= @post.title %></h2>
     <p class="mb-3 font-normal text-gray-700"><%= @post.text%></p>
   </div>
-  <%= link_to new_user_post_comment_path(@current_user.id, @post.id) do %>
-    add a comment.
-  <% end %>
   <h2 class="mb-3 pl-3 font-bold text-gray-700"> comments.</h2>
   <div class="flex flex-col  rounded-lg border justify-between p-3 leading-normal min-w-full m-2">
+    <%= render "comments/new", :comment => @comment %>
     <% if @post.comments.length > 0 %>
       <%= render partial: "comment", collection: @post.comments %>
     <% else %>

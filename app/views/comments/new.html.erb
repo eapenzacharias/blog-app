@@ -1,8 +1,0 @@
-<div>
-  <%= form_with model: @comment, url: user_post_comments_path(@current_user.id, @post_id) do |form| %>
-    <div class="mb-3">
-      <%= form.text_area :text, required: true, class: "" %>
-    </div>
-    <%= form.submit "Comment", class: " " %>
-  <% end %>
-</div>
