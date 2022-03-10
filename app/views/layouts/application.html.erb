@@ -22,6 +22,9 @@
           <li class="flex-3 mx-2">
             <%= link_to "my posts.", user_posts_path(@current_user.id), class: "rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 p-2 pr-4 pl-4 mt-6 text-slate-50" %>
           </li>
+          <li class="flex-3 mx-2">
+            <%= link_to "new post.", new_user_post_path(@current_user.id), class: "rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 p-2 pr-4 pl-4 mt-6 text-slate-50" %>
+          </li>
         </ul>
       </nav>
       <%= yield %>
