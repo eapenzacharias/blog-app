@@ -1,0 +1,8 @@
+<div class="mx-4 mb-6">
+  <%= form_with model: @comment, url: user_post_comments_path(@current_user.id, @post.id), class: "w-full min-w-full" do |form| %>
+    <div class="flex items-center border-b border-gradient-to-r from-cyan-500 to-blue-500 p-0">
+      <%= form.text_field :text, required: true, class: "appearance-none bg-transparent border-none w-3/4 text-gray-700 mr-3 pt-1 px-2 leading-tight focus:outline-none", placeholder: "what's your opinion?" %>
+      <%= form.submit "Comment", class: "lex-shrink-0 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 p-1 px-4 mt-4 mb-3 text-slate-50" %>
+    </div>
+  <% end %>
+</div>

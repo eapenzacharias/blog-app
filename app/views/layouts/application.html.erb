@@ -10,7 +10,23 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
-    <main class="containerflex h-screen flex">
+    <main class=" bg-slate-100 min-h-screen py-6">
+      <nav class="flex items-center justify-between space-x-auto flex-wrap items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl m-auto px-5 py-4">
+        <ul class="flex-column flex m-auto">
+          <li class="flex-3 mx-2">
+            <%= link_to "home.", users_path, class: "rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 p-2 pr-4 pl-4 mt-6 text-slate-50" %>
+          </li>
+          <li class="flex-3 mx-2">
+            <%= link_to "my profile.", user_path(@current_user.id), class: "rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 p-2 pr-4 pl-4 mt-6 text-slate-50" %>
+          </li>
+          <li class="flex-3 mx-2">
+            <%= link_to "my posts.", user_posts_path(@current_user.id), class: "rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 p-2 pr-4 pl-4 mt-6 text-slate-50" %>
+          </li>
+          <li class="flex-3 mx-2">
+            <%= link_to "new post.", new_user_post_path(@current_user.id), class: "rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 p-2 pr-4 pl-4 mt-6 text-slate-50" %>
+          </li>
+        </ul>
+      </nav>
       <%= yield %>
     </main>
   </body>
