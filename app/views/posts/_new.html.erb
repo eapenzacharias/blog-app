@@ -1,4 +1,4 @@
-<%= form_with model: @post, class: "bg-white rounded px-8 pt-6 pb-8 mb-4 min-w-full", url: user_posts_path(@current_user.id), local: true do |form| %>
+<%= form_with model: @post, class: "bg-white rounded px-4 pt-6 py-1 mb-4 min-w-full", url: user_posts_path(@current_user.id), local: true do |form| %>
   <div class="mb-4">
     <%= form.text_field :title, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", placeholder: "what's on your mind?", required: true %>
   </div>
