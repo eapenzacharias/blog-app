@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe Post, type: :model do
+RSpec.describe Post, type: :model do # rubocop:disable Metrics/BlockLength
   user = User.create(name: 'user1')
-  post = Post.new(title: 'post', author: user, text: 'Post content')
 
   subject do
     Post.new(title: 'Post 1', author: user, text: 'Post content')
