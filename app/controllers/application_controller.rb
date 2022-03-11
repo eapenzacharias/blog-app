@@ -2,7 +2,7 @@
 
 # added current_user method
 class ApplicationController < ActionController::Base
-  add_flash_types :danger, :info, :warning, :success
+  add_flash_types :red, :cyan
 
   def current_user
     User.first

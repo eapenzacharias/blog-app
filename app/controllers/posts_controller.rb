@@ -25,9 +25,9 @@ class PostsController < ApplicationController
     @current_user = current_user
     @post = @current_user.posts.new(post_params)
     if @post.save
-      redirect_to user_path(@current_user.id), success: 'Post was successfully created'
+      redirect_to user_path(@current_user.id), cyan: 'thought posted.'
     else
-      flash.now[:danger] = 'Post was not created'
+      flash.now[:red] = @post.errors.full_messages.join(', ')
       render :new
     end
   end
