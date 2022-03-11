@@ -13,7 +13,8 @@
 
 ### Prerequisites
 
-You need to have ruby installed in your machine.
+- Ruby
+- Postgres server
 
 ### Setup
 
@@ -36,6 +37,10 @@ bundler install
 Run the following command to start the server, then go to http://localhost:3000
 
 ```sh
+rails db:create # create database
+rails db:migrate # migrate tables
+rails db:seed # load all data in database from seed.rb
+    
 bin/dev # necessary to start the app for the first time
 ---- or ----
 rails s # can be used after starting the app at least once  
