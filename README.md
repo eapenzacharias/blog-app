@@ -2,6 +2,8 @@
 
 > Blog website made with Ruby on Rails.
 
+| ![](https://user-images.githubusercontent.com/49812651/157978814-2f4f2625-698f-4e47-9830-01a4d33df19b.png)  | ![](https://user-images.githubusercontent.com/49812651/157978830-9c9c33d9-b8a6-4326-803b-723c661781c3.png)
+|:---:|:---:|
 
 ## Built With
 
