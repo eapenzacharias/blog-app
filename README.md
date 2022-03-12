@@ -2,6 +2,8 @@
 
 > Blog website made with Ruby on Rails.
 
+| ![](https://user-images.githubusercontent.com/49812651/157978814-2f4f2625-698f-4e47-9830-01a4d33df19b.png)  | ![](https://user-images.githubusercontent.com/49812651/157978830-9c9c33d9-b8a6-4326-803b-723c661781c3.png)
+|:---:|:---:|
 
 ## Built With
 
@@ -11,7 +13,8 @@
 
 ### Prerequisites
 
-You need to have ruby installed in your machine.
+- Ruby
+- Postgres server
 
 ### Setup
 
@@ -34,6 +37,10 @@ bundler install
 Run the following command to start the server, then go to http://localhost:3000
 
 ```sh
+rails db:create # create database
+rails db:migrate # migrate tables
+rails db:seed # load all data in database from seed.rb
+    
 bin/dev # necessary to start the app for the first time
 ---- or ----
 rails s # can be used after starting the app at least once  

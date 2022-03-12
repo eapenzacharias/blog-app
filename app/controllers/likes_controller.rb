@@ -7,10 +7,10 @@ class LikesController < ApplicationController
     @current_user = current_user
 
     if liked?
-      flash[:danger] = 'You have already liked this post!'
+      flash[:red] = 'not again!'
     else
       Like.create(author: current_user, post_id: @post_id)
-      flash[:success] = 'You have successfully liked this post!'
+      flash[:cyan] = 'glad that you found it interesting!'
     end
     redirect_back(fallback_location: root_path)
   end
