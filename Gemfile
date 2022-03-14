@@ -47,6 +47,7 @@ gem 'bootsnap', require: false
 gem 'rubocop'
 gem 'rubocop-rails'
 gem 'webpacker'
+gem 'devise'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
