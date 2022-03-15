@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
     new_user_session_path if resource_or_scope == :user
   end
 
-  def after_sign_up_path_for(resource_or_scope)
+  def after_inactive_sign_up_path_for(resource_or_scope)
     new_user_session_path
   end
 end
