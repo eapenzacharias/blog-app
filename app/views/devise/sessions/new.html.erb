@@ -9,7 +9,7 @@
         <%= f.password_field :password, autocomplete: "current-password", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", placeholder: "your password" %>
       </div>
       <% if devise_mapping.rememberable? %>
-        <div class="flex md:items-center mb-6">
+        <div class="flex md:items-center">
           <label class="block text-gray-500 font-bold">
             <%= f.check_box :remember_me, class: "mr-2 leading-tight flex-3" %>
             <span class="text-md">remember me.</span>
@@ -17,11 +17,9 @@
         </div>
       <% end %>
       <div class="flex items-center justify-between">
-        <%= f.submit "Log in", class: "rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 p-2 px-6 m-3 w-full text-slate-50" %>
-      <% end %>
-      <%= link_to "Sign up", new_registration_path(resource_name), method: :get, class: "rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 p-2 px-6 m-3 w-full text-slate-50" %>
-    </div>
-    <%= link_to "Forgot your password?", new_password_path(resource_name), class: "mb-3 font-normal text-gray-700" %><br />
-    <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name), class: "mb-3 font-normal text-gray-700" %><br />
+        <%= f.submit "Log in", class: "rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 p-2 px-6 my-6 w-40 text-slate-50" %>
+      </div>
+    <% end %>
+    <%= render "devise/shared/links" %>
   </div>
 </div>
