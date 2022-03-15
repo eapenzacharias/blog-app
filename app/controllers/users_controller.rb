@@ -2,6 +2,8 @@
 
 # List and display user
 class UsersController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @users = User.all
     @current_user = current_user
@@ -9,8 +11,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @posts = @user.recent_posts.includes(:comments)
     @current_user = current_user
+    @user = @current_user
+    @posts = @user.recent_posts.includes(:comments)
   end
 end
