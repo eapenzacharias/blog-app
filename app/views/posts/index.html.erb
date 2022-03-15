@@ -1,6 +1,6 @@
 <div class="m-auto 2xl:w-2/4 lg:3/4 md:w-5/6 md:max-w-xl">
   <div class="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl m-auto mt-4 md-4">
-    <img class="object-cover w-full h-96 aspect-square rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="<%= @user.photo %>" alt="<%= @user.name %>">
+    <img class="object-cover w-full h-96 aspect-square rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="<%= @user.photo || "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" %>" alt="<%= @user.name %>">
     <div class="flex flex-col justify-between p-4 leading-normal">
       <h1 class="mb-2 text-3xl font-bold tracking-tight text-gray-700"><%= @user.name %></h1>
       <p class="mb-3 font-normal text-gray-700"> posts: <%= @user.posts_counter %></p>
