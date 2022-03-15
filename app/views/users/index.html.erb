@@ -5,7 +5,6 @@
         <h2 class="text-2xl font-bold m-auto leading-loose text-left text-grey-700">
           Hello <%= @current_user.name %>!
         </h2>
-        <%= button_to "Sign out", destroy_user_session_path, :method => :delete %>
         <%= render "posts/new", :post => @post %>
       </div>
     </div>
