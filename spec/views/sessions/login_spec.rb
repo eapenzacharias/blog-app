@@ -24,4 +24,29 @@ RSpec.describe 'Login' do
       expect(page).to have_button('Log in')
     end
   end
+  describe 'When clicking on log in button', type: :feature do
+    before :each do
+      visit '/login'
+    end
+
+    it 'should flash error message when empty login details are submitted' do
+      click_button 'Log in'
+      expect(page).to have_text('Invalid Email or password.')
+    end
+
+    it 'should flash error message when incorrect login details are submitted' do
+      fill_in 'your email id', with: 'a@a.com'
+      fill_in 'your password', with: '987654321'
+      click_button 'Log in'
+      expect(page).to have_text('Invalid Email or password.')
+    end
+
+    it 'should login when correct login details are submitted' do
+      fill_in 'your email id', with: 'user@test.com'
+      fill_in 'your password', with: '123456789'
+      click_button 'Log in'
+      expect(page).to have_text('Signed in successfully.')
+      expect(page).to have_text('Hello User!')
+    end
+  end
 end
