@@ -48,6 +48,7 @@ gem 'devise'
 gem 'rubocop'
 gem 'rubocop-rails'
 gem 'webpacker'
+gem 'cancancan'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
