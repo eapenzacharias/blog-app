@@ -2,7 +2,7 @@
 
 # added current_user method
 class ApplicationController < ActionController::Base
-  add_flash_types :red, :cyan
+  add_flash_types :red, :cyan, :notice, :alert, :timedout
   protect_from_forgery with: :exception
 
   before_action :update_allowed_parameters, if: :devise_controller?

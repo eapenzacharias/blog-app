@@ -3,8 +3,10 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do # rubocop:disable Metrics/BlockLength
-  subject { User.new(name: 'User', email: 'test6@test.com', password: 'test1234', password_confirmation: 'test1234', confirmed_at: Time.now)
-  }
+  subject do
+    User.new(name: 'User', email: 'test6@test.com', password: 'test1234', password_confirmation: 'test1234',
+             confirmed_at: Time.now)
+  end
 
   before { subject.save }
 
