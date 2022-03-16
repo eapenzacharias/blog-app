@@ -16,6 +16,13 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
 
+  ROLES = %i[admin user].freeze
+
+  def is?(requested_role)
+    role == requested_role.to_s
+  end
+
+
   def recent_posts
     posts.order(created_at: :desc).limit(3)
   end
