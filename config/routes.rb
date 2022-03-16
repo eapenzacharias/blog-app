@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       sign_up: 'signup'
     }
   resources :users, only: [:index, :show] do
-    resources :posts, only: [:index, :show, :new, :create] do
+    resources :posts, only: [:index, :show, :new, :create, :destroy] do
       resources :comments, only: [:new, :create, :destroy]
       resources :likes, only: [:create]
     end
