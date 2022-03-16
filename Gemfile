@@ -45,7 +45,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootsnap', require: false
 
 gem 'cancancan'
-gem 'devise'
+gem "devise", github: "heartcombo/devise", branch: "main"
 gem 'rubocop'
 gem 'rubocop-rails'
 gem 'webpacker'
