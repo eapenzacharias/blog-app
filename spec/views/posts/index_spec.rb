@@ -7,10 +7,10 @@ RSpec.describe Post, type: :feature do  # rubocop:disable Metrics/BlockLength
   before :each do
     User.create(id: 1, name: 'User One', email: 'user1@test.com', password: '123456789', password_confirmation: '123456789',
                 bio: 'bio for 1', confirmed_at: Time.now)
-    Post.create(id: 1, title: 'post a', text: 'post content 1', author_id: 1)
-    Post.create(id: 2, title: 'post b', text: 'post content 2', author_id: 1)
-    Post.create(id: 3, title: 'post c', text: 'post content 3', author_id: 1)
-    Post.create(id: 4, title: 'post d', text: 'post content 4', author_id: 1)
+    Post.create(id: 1, title: 'post a', text: 'post content a', author_id: 1)
+    Post.create(id: 2, title: 'post b', text: 'post content b', author_id: 1)
+    Post.create(id: 3, title: 'post c', text: 'post content c', author_id: 1)
+    Post.create(id: 4, title: 'post d', text: 'post content d', author_id: 1)
 
     Comment.create(id: 1, text: 'comment a', author_id: 1, post_id: 1)
     Comment.create(id: 2, text: 'comment b', author_id: 1, post_id: 1)
@@ -33,7 +33,11 @@ RSpec.describe Post, type: :feature do  # rubocop:disable Metrics/BlockLength
       expect(page).to have_text('User One')
     end
 
-    it 'should have post counter with 0' do
+    it 'should have default profle picture.' do
+      expect(page).to have_css('img')
+    end
+
+    it 'should have post counter' do
       expect(page).to have_text('posts: 4')
     end
 
@@ -42,6 +46,13 @@ RSpec.describe Post, type: :feature do  # rubocop:disable Metrics/BlockLength
       expect(page).to have_text('post b')
       expect(page).to have_text('post c')
       expect(page).to have_text('post d')
+    end
+
+    it 'should display body of posts' do
+      expect(page).to have_text('content a')
+      expect(page).to have_text('content b')
+      expect(page).to have_text('content c')
+      expect(page).to have_text('content d')
     end
 
     it 'should display comments' do

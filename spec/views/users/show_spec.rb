@@ -25,6 +25,10 @@ RSpec.describe User, type: :feature do  # rubocop:disable Metrics/BlockLength
       expect(page).to have_text('User 1')
     end
 
+    it 'should have default profle picture.' do
+      expect(page).to have_css('img')
+    end
+
     it 'should have post counter with 0' do
       expect(page).to have_text('posts: 4')
     end
@@ -50,6 +54,11 @@ RSpec.describe User, type: :feature do  # rubocop:disable Metrics/BlockLength
 
     it 'should have link to see all posts' do
       expect(page).to have_link('see all posts.')
+    end
+
+    it 'should open post#index when clicked on see all posts' do
+      click_on('see all posts.', match: :first)
+      expect(page).to have_text('post 1')
     end
 
     it 'should open correct post when clicked' do
