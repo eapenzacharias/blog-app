@@ -3,7 +3,7 @@
 require 'rails_helper'
 require 'capybara/rspec'
 
-RSpec.describe User, type: :feature do  # rubocop:disable Metrics/BlockLength
+RSpec.describe User, type: :feature do # rubocop:disable Metrics/BlockLength
   before :each do
     User.create(name: 'User 1', email: 'user1@test.com', password: '123456789', password_confirmation: '123456789',
                 bio: 'bio for 1', confirmed_at: Time.now)
@@ -13,7 +13,7 @@ RSpec.describe User, type: :feature do  # rubocop:disable Metrics/BlockLength
                 bio: 'bio for 3', confirmed_at: Time.now)
   end
 
-  describe 'when visiting the User#index page' do
+  describe 'when visiting the User#index page' do # rubocop:disable Metrics/BlockLength
     before :each do
       visit '/login'
       fill_in 'your email id', with: 'user1@test.com'
