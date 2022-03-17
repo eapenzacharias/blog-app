@@ -2,9 +2,13 @@
 
 require 'rails_helper'
 require 'capybara/rspec'
+require 'database_cleaner/active_record'
+
+DatabaseCleaner.strategy = :truncation
 
 RSpec.describe User, type: :feature do # rubocop:disable Metrics/BlockLength
   before :each do
+    DatabaseCleaner.clean
     User.create(name: 'User 1', email: 'user1@test.com', password: '123456789', password_confirmation: '123456789',
                 bio: 'bio for 1', confirmed_at: Time.now)
     User.create(name: 'User 2', email: 'user2@test.com', password: '123456789', password_confirmation: '123456789',

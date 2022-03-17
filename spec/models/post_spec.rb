@@ -1,10 +1,14 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+require 'database_cleaner/active_record'
+
+DatabaseCleaner.strategy = :truncation
 
 RSpec.describe Post, type: :model do # rubocop:disable Metrics/BlockLength
   # post = Post.create(title: 'Post', author_id: user.id, text: 'post content')
   before do
+    DatabaseCleaner.clean
     @user = User.create(id: 1, name: 'User', email: 'test5@test.com', password: 'test1234',
                         password_confirmation: 'test1234', confirmed_at: Time.now)
   end
