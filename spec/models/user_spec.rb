@@ -5,7 +5,6 @@ require 'database_cleaner/active_record'
 
 DatabaseCleaner.strategy = :truncation
 
-
 RSpec.describe User, type: :model do # rubocop:disable Metrics/BlockLength
   subject do
     User.new(name: 'User', email: 'test6@test.com', password: 'test1234', password_confirmation: 'test1234',
@@ -14,7 +13,7 @@ RSpec.describe User, type: :model do # rubocop:disable Metrics/BlockLength
 
   before do
     DatabaseCleaner.clean
-     subject.save
+    subject.save
   end
 
   it 'should have a name' do
