@@ -40,16 +40,16 @@ Run the following command to start the server, then go to http://localhost:3000
 rails db:create # create database
 rails db:migrate # migrate tables
 rails db:seed # load all data in database from seed.rb
-    
+
 bin/dev # necessary to start the app for the first time
 ---- or ----
-rails s # can be used after starting the app at least once  
+rails s # can be used after starting the app at least once
 ```
 
 ### Run tests
 
 ```sh
-bundle exec rspec
+bundle exec rspec spec
 ```
 
 ## Author

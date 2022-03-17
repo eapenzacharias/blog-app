@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+require 'database_cleaner/active_record'
+
+DatabaseCleaner.strategy = :truncation
 
 RSpec.describe User, type: :model do # rubocop:disable Metrics/BlockLength
   subject do
@@ -8,7 +11,10 @@ RSpec.describe User, type: :model do # rubocop:disable Metrics/BlockLength
              confirmed_at: Time.now)
   end
 
-  before { subject.save }
+  before do
+    DatabaseCleaner.clean
+    subject.save
+  end
 
   it 'should have a name' do
     subject.name = nil
